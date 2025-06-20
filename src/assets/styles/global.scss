@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@use './variables';
+@use './mixins';
 
 *,
 *::before,
@@ -10,8 +10,8 @@
 }
 
 body {
-  font-family: $font-base;
-  color: $black-color;
+  font-family: variables.$font-base;
+  color: variables.$black-color;
 }
 
 a {
