@@ -1,0 +1,26 @@
+@use './base/reset';
+@use './abstracts/index' as abs;
+@use "sass:map";
+
+.wrap{
+  background: map.get(abs.$colors, "light-grey");
+  @include abs.flexbox(column, center, center);
+  max-width: 480px;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+header{
+  width: 100%;
+}
+
+footer{
+  width: 100%;
+}
+
+.contents{
+  width: 100%;
+  height: 100%;
+}
+
+

@@ -1,0 +1,28 @@
+//vender prefix
+@mixin prefix($property, $value, $prefixes: ('webkit', 'moz', 'ms','o')) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+//flex
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//responds
+@mixin respond-to($device) {
+  $size: map.get($breakpoints, $device);
+
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$device}`.";
+  }
+}
