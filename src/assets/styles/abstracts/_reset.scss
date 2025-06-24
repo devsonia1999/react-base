@@ -1,0 +1,33 @@
+@use 'mixins' as mix;
+@use 'variables' as var;
+@use 'script' as fun;
+@use "sass:map";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  @include mix.prefix(box-sizing,border-box);
+}
+
+body {
+  background: map.get(var.$color, "_light");
+  font-family: var.$font-base;
+  font-size: fun.rem(14);
+  color: map.get(var.$color, "_dark");
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}

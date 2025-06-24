@@ -1,17 +1,24 @@
+@use 'script' as fun;
+
 //color
-$colors: (
-  primary: #57c3c5,
-  black1: #000000,
-  light-grey: #dfdfdf80,
-  white1: #ffffff,
+$color: (
+  _primary: #57c3c5,
+  _dark: #000000,
+  _light: #dfdfdf80,
+  _bg:#ffffff,
 );
 
 //font
-$font-base: 'Pretendard', sans-serif;
+$font-base: "Noto Sans KR", sans-serif;
 
 //breakpoints
 $breakpoints: (
-  mobile: 480px,
-  tablet: 768px,
-  desktop: 1024px,
+  _mobile: 480px,
+  _tablet: 768px,
+  _desktop: 1024px,
 );
+
+//font-size
+$font: (
+  _sm: fun.rem(12),
+)

@@ -1,13 +1,17 @@
 import React from 'react';
 
-function menuBar() {
+function MenuBar() {
   return (
     <div className='menuBar'>
       <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
         <li></li>
       </ul>
     </div>
   );
 }
 
-export default menuBar;
+export default MenuBar;
