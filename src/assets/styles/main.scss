@@ -3,7 +3,7 @@
 
 .wrap{
   background: map.get($color, "_bg");
-  @include flexbox(column, center, center);
+  @include flexbox(column);
   width: 100%;
   max-width: map.get($breakpoints, "_mobile");
   height: 100%;
@@ -15,7 +15,7 @@ header{
   width: 100%;
   padding: rem(15) rem(18);
   h1{
-    color: map.get($color, "_primary");
+    color: #be9c7a;
   }
 }
 
@@ -28,28 +28,34 @@ footer{
 
 // 메뉴바
 .menuBar{
-  background: map.get($color, "_primary");
+  background: #fff;
+  border-top: 1px solid map.get($color, "_light");
   width: 100%;
   max-width: map.get($breakpoints, "_mobile");
   height: rem(80);
   position: sticky;
   bottom: 0; left: 0;
-  border-radius: 15px 15px 0 0;
   ul{
     @include flexbox(row, center, center);
     li{
+      @include flexbox(column, center, center);
       width: 20%;
       height: rem(80);
       background: no-repeat center center;
-      background-size: rem(45) auto;
-      &:nth-child(3){
-        &::before{
-          display: block;
-          border-radius: 5px;
-          content: '';
-          background: map.get($color, "_bg");
-        }
-        background-image: url('@/assets/images/menu_home.png');
+      background-size: rem(32) auto;
+      &.on a{
+        color: #be9c7a;
+      }
+      img{
+        width: rem(29);
+        height: rem(29);
+      }
+      a{
+        @include flexbox(column, center, center);
+        gap: rem(3);
+        letter-spacing: rem(-1);
+        font-size: rem(12);
+        color: #949494;
       }
     }
   }
@@ -57,7 +63,7 @@ footer{
 
 .contents{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   min-height: 600px;
   padding: rem(18);
 }
