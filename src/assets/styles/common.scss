@@ -67,4 +67,9 @@ footer{
   padding: rem(18);
 }
 
+// common
+.btn{
+  @include button;
+}
+
 

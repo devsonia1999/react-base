@@ -8,8 +8,8 @@ const MainLayout = () => {
   return (
     <>
       <Header/>
-      <Footer/>
       <Outlet/>
+      <Footer/>
       <MenuBar/>
     </>
   )

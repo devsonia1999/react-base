@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use "sass:color";
+
 //responds
 @mixin respond-to($device) {
   $size: map.get($breakpoints, $device);
@@ -20,11 +23,12 @@
 }
 
 //flex
-@mixin flexbox($direction: row, $justify: flex-start, $align: stretch) {
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $gap: 8) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+  gap: $gap#{px};
 }
 
 //position
@@ -33,4 +37,17 @@
   left: $left;
   top: $top;
   transform: $trans;
+}
+
+//button
+@mixin button($type: null, $color: $primary-color, $size: $md){
+  width: 100%;
+  background: $color;
+  border: none;
+  font-size: $sm;
+  @include flexbox(column,center,center);
+
+  &:hover{
+    background: darken($color, 5%);
+  }
 }

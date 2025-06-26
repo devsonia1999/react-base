@@ -15,6 +15,10 @@ $bp-tablet: 768px;
 $bp-desktop: 1024px;
 
 //font-size
-$font: (
-  _sm: rem(12),
-)
+// $font: (
+//   _sm: rem(12),
+// )
+
+$sm: rem(12);
+$md: rem(14);
+$lg: rem(16);

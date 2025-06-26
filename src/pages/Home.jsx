@@ -3,7 +3,7 @@ function Home() {
   return (
     <>
       <div className="contents">
-        hello world
+        <button className="btn">확인</button>
       </div>
     </>
   );
