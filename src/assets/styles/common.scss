@@ -1,11 +1,10 @@
 @use './abstracts/index' as *;
-@use "sass:map";
 
 .wrap{
-  background: map.get($color, "_bg");
+  background: $bg-color;
   @include flexbox(column);
   width: 100%;
-  max-width: map.get($breakpoints, "_mobile");
+  max-width: $bp-mobile;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -29,9 +28,9 @@ footer{
 // 메뉴바
 .menuBar{
   background: #fff;
-  border-top: 1px solid map.get($color, "_light");
+  border-top: 1px solid $grey-color;
   width: 100%;
-  max-width: map.get($breakpoints, "_mobile");
+  max-width: $bp-mobile;
   height: rem(80);
   position: sticky;
   bottom: 0; left: 0;

@@ -1,20 +1,20 @@
-import Home from '@/pages/Home.jsx';
-import Footer from '@/layout/Footer.jsx';
-import Header from '@/layout/Header.jsx';
-import MenuBar from '@/layout/menuBar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from '@/pages/Home'
+import Test from '@/pages/Test'
+import MainLayout from '@/layout/MainLayout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function Router() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+
+        <Route path="/test" element={<Test />} />
       </Routes>
-      <Footer />
-      <MenuBar />
     </BrowserRouter>
   );
 }
 
-export default Router;
+export default Router

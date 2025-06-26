@@ -1,6 +1,6 @@
-@use 'mixins' as mix;
-@use 'variables' as var;
-@use 'script' as fun;
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'script' as *;
 @use "sass:map";
 
 *,
@@ -8,14 +8,14 @@
 *::after {
   margin: 0;
   padding: 0;
-  @include mix.prefix(box-sizing,border-box);
+  @include prefix(box-sizing, border-box);
 }
 
 body {
-  background: map.get(var.$color, "_light");
-  font-family: var.$font-base;
-  font-size: fun.rem(14);
-  color: map.get(var.$color, "_dark");
+  background: $grey-color;
+  font-family: $base-font;
+  font-size: rem(14);
+  color: $black-color;
 }
 
 a {

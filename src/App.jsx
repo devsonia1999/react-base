@@ -1,4 +1,4 @@
-import '@/assets/styles/main.scss';
+import '@/assets/styles/common.scss';
 import Router from '@/router/Router.jsx';
 import React from 'react';
 
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

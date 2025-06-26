@@ -1,24 +1,20 @@
-@use 'script' as fun;
+@use 'script' as *;
 
 //color
-$color: (
-  _primary: #eddaca,
-  _dark: #000000,
-  _light: #dfdfdf80,
-  _bg:#ffffff,
-);
+$primary-color: #eddaca;
+$black-color: #000000;
+$grey-color: #dfdfdf80;
+$bg-color: #ffffff;
 
 //font
-$font-base: "Noto Sans KR", sans-serif;
+$base-font: "Noto Sans KR", sans-serif;
 
 //breakpoints
-$breakpoints: (
-  _mobile: 480px,
-  _tablet: 768px,
-  _desktop: 1024px,
-);
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
 
 //font-size
 $font: (
-  _sm: fun.rem(12),
+  _sm: rem(12),
 )
