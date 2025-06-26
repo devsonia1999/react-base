@@ -46,8 +46,4 @@
   border: none;
   font-size: $sm;
   @include flexbox(column,center,center);
-
-  &:hover{
-    background: darken($color, 5%);
-  }
 }

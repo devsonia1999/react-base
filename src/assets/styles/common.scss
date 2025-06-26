@@ -6,7 +6,7 @@
   width: 100%;
   max-width: $bp-mobile;
   height: 100%;
-  margin: 0 auto;
+  margin: 0 auto rem(80);
   position: relative;
 }
 
@@ -32,8 +32,9 @@ footer{
   width: 100%;
   max-width: $bp-mobile;
   height: rem(80);
-  position: sticky;
-  bottom: 0; left: 0;
+  position: fixed;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
   ul{
     @include flexbox(row, center, center);
     li{

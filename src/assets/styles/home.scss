@@ -1,0 +1,26 @@
+@use './abstracts/index' as *;
+
+.visualCon{
+  width: 100%;
+  .slideCard{
+    img{
+      // width: 300px;
+      margin: 0 auto rem(15);
+    }
+    .tit{
+      text-align: center;
+      font-size: $lg;
+    }
+  }
+  .swiper{
+    .swiper-pagination{
+      .swiper-pagination-bullet-active{
+        background: $primary-color;
+      }
+    }
+  }
+}
+
+.contents{
+
+}
