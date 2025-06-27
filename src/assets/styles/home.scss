@@ -1,16 +1,30 @@
 @use './abstracts/index' as *;
 
+// common
+.title{
+  padding: 0 rem(15) rem(10);
+  letter-spacing: rem(-1);
+  font-size: rem(17);
+  span{
+    font-weight: bold;
+    color: #be9c7a;
+  }
+}
+
 .visualCon{
   width: 100%;
-  .slideCard{
-    img{
-      // width: 300px;
-      margin: 0 auto rem(15);
+  .tit{
+    &::first-line{
+      line-height: rem(30);
+      font-weight: bold;
+      font-size: rem(15);
+      color: #000;
     }
-    .tit{
-      text-align: center;
-      font-size: $lg;
-    }
+    padding: 0 rem(15);
+    white-space: pre-line;
+    text-align: center;
+    font-size: rem(11);
+    color: #777;
   }
   .swiper{
     .swiper-pagination{
@@ -18,6 +32,22 @@
         background: $primary-color;
       }
     }
+    .slideCard {
+      position: relative;
+      width: 100%;
+      padding-top: 153.33%; /* 4:3 비율 => 4 / 3 * 100 */
+      overflow: hidden;
+      margin-bottom: rem(10);
+      .bookImg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+    }
+    
   }
 }
 

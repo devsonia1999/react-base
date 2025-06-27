@@ -6,13 +6,19 @@
   width: 100%;
   max-width: $bp-mobile;
   height: 100%;
-  margin: 0 auto rem(80);
+  margin: rem(70) auto rem(80);
   position: relative;
 }
 
 header{
   width: 100%;
+  max-width: 480px;
   padding: rem(15) rem(18);
+  background: #fff;
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
   h1{
     color: #be9c7a;
   }
