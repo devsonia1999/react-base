@@ -1,6 +1,8 @@
-import Home from '@/pages/Home'
 import MainLayout from '@/layout/MainLayout';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from '@/pages/Home';
+import Login from '@/pages/users/Login';
+import LoginCallback from '@/pages/users/LoginCallback';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function Router() {
   return (
@@ -8,6 +10,8 @@ function Router() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/login/callback" element={<LoginCallback />} />
         </Route>
       </Routes>
     </BrowserRouter>

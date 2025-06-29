@@ -9,7 +9,7 @@ const menuItems = [
   { to: '/chat', label: '독서모임', alt: '책방', icon: 'menu-chat' },
   { to: '/', label: '홈', alt: '홈', icon: 'menu-home' },
   { to: '/bookmark', label: '북마크', alt: '북마크', icon: 'menu-check' },
-  { to: '/mypage', label: '마이페이지', alt: '마이페이지', icon: 'menu-user' },
+  { to: '/login', label: '마이페이지', alt: '마이페이지', icon: 'menu-user' },
 ];
 
 // 이미지 경로를 동적으로 가져오기
