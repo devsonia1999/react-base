@@ -1,7 +1,7 @@
 import MainLayout from '@/layout/MainLayout';
 import Home from '@/pages/Home';
-import Login from '@/pages/users/Login';
-import LoginCallback from '@/pages/users/LoginCallback';
+import Login from '@/pages/user/Login';
+import LoginCallback from '@/pages/user/LoginCallback';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function Router() {
