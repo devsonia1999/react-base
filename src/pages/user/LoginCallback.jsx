@@ -12,11 +12,13 @@ function LoginCallback() {
       if (returnedState !== savedState) {
         console.log('저장된 상태:', savedState);
         console.log('반환된 상태:', returnedState);
+        alert('잘못된 접근입니다.');
         return;
       }
 
       try {
-        const res = await axios.get('https://nid.naver.com/oauth2.0/token', {
+        // 1. 네이버에 access_token 요청
+        const tokenRes = await axios.get('https://nid.naver.com/oauth2.0/token', {
           params: {
             grant_type: 'authorization_code',
             client_id: import.meta.env.VITE_NAVER_CLIENT_ID,
@@ -26,27 +28,26 @@ function LoginCallback() {
           },
         });
 
-        const { access_token } = res.data;
-        console.log('✅ Access Token:', access_token);
+        const { access_token } = tokenRes.data;
+        console.log('Access Token:', access_token);
 
-        // 다음 단계: 사용자 정보 요청
-        const userInfo = await axios.get('https://openapi.naver.com/v1/nid/me', {
+        // 2. 백엔드 통해 사용자 정보 요청
+        const userRes = await axios.get('http://localhost:5000/api/naver/me', {
           headers: {
             Authorization: `Bearer ${access_token}`,
           },
         });
 
-        const user = userInfo.data.response;
-        console.log('👤 사용자 정보:', user);
+        const user = userRes.data.response;
+        console.log('사용자 정보:', user);
 
-        // 예: 세션 저장
+        // 3. 세션 저장 및 리디렉션
         sessionStorage.setItem('user', JSON.stringify(user));
         alert(`${user.name}님 환영합니다!`);
-        // 예: 메인 페이지로 이동
         window.location.href = '/';
 
       } catch (err) {
-        console.error('❌ 네이버 로그인 오류:', err);
+        console.error('네이버 로그인 오류:', err.response?.data || err.message);
         alert('로그인 실패');
       }
     };
