@@ -52,5 +52,5 @@
 }
 
 .contents{
-
+  @include flexbox(column, flex-start, flex-start, 12);
 }

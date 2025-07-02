@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'script' as *;
 @use "sass:color";
 
 //responds
@@ -42,8 +43,12 @@
 //button
 @mixin button($type: null, $color: $primary-color, $size: $md){
   width: 100%;
-  background: $color;
+  background: #a17d57;
+  border-radius: rem(25);
+  padding: rem(15);
   border: none;
-  font-size: $sm;
+  font-size: $md;
   @include flexbox(column,center,center);
+  outline: none;
+  color: #fff;
 }

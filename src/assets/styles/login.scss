@@ -1,0 +1,12 @@
+@use './abstracts/index' as *;
+
+.findLink{
+  width: 100%;
+  padding: rem(15) rem(10);
+  color: #303030;
+  a{
+    float: right;
+    font-weight: 500;
+    color: #be9c7a;
+  }
+}

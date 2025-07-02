@@ -29,6 +29,7 @@ footer{
   padding: rem(18);
   text-align: center;
   font-size: rem(12);
+  color: #be9c7a;
 }
 
 // 메뉴바
@@ -60,7 +61,7 @@ footer{
         @include flexbox(column, center, center);
         gap: rem(3);
         letter-spacing: rem(-1);
-        font-size: rem(12);
+        font-size: rem(10);
         color: #949494;
       }
     }
@@ -70,13 +71,35 @@ footer{
 .contents{
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  min-height: 300px;
   padding: rem(18);
+  .introTit{
+    span{
+      font-weight: bold;
+      color: #be9c7a;
+    }
+    padding: rem(15) rem(10);
+    font-weight: 400;
+    color: #666
+  }
 }
 
 // common
 .btn{
   @include button;
+}
+input{
+  width: 100%;
+  background: #efefef;
+  border-radius: rem(25);
+  border: none;
+  padding: rem(15);
+  font-size: $md;
+  color: $black-color;
+  outline: none;
+  &:focus {
+    outline: 1px solid #a17d57;
+  }
 }
 
 
