@@ -27,9 +27,34 @@ function Home() {
 
   return (
     <>
+      <div className="visualCon">
+        <h2 className='title'><span>독서모임</span>을 소개합니다</h2>
+        <ul className='slideList'>
+          <li>
+            <img src="/src/assets/images/visual1.png" alt="독서모임 소개 이미지" />
+            <p>다양한 독서모임을 둘러보세요</p>
+          </li>
+          <li>
+            <img src="/src/assets/images/visual1.png" alt="독서모임 소개 이미지" />
+            <p>다양한 독서모임을 둘러보세요</p>
+          </li>
+          <li>
+            <img src="/src/assets/images/visual1.png" alt="독서모임 소개 이미지" />
+            <p>다양한 독서모임을 둘러보세요</p>
+          </li>
+          <li>
+            <img src="/src/assets/images/visual1.png" alt="독서모임 소개 이미지" />
+            <p>다양한 독서모임을 둘러보세요</p>
+          </li>
+          <li>
+            <img src="/src/assets/images/visual1.png" alt="독서모임 소개 이미지" />
+            <p>다양한 독서모임을 둘러보세요</p>
+          </li>
+        </ul>
+      </div>
       <div className='visualCon'>
         {books[activeIndex] && (
-          <h2 className='title'><span>{books[activeIndex].author}</span> 작가님 TOP7</h2>
+          <h2 className='title'><span>{books[activeIndex].author}</span> 작가님 TOP7  둘러보기</h2>
         )}
         <Swiper
           effect="coverflow"
@@ -65,9 +90,6 @@ function Home() {
         )}
       </div>
 
-      <div className="contents">
-        
-      </div>
     </>
   );
 }
