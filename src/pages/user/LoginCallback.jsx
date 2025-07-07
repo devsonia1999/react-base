@@ -1,9 +1,11 @@
 import axios from 'axios'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function LoginCallback() {
   useEffect(() => {
     const fetchAccessToken = async () => {
+      
       const query = new URLSearchParams(window.location.search)
       const code = query.get('code')
       const returnedState = query.get('state')
@@ -42,17 +44,16 @@ function LoginCallback() {
         // 세션 저장 및 리디렉션
         sessionStorage.setItem('user', JSON.stringify(user))
         alert(`${user.name}님 환영합니다!`)
-        window.location.href = '/'
+        useNavigate('/')
       } catch (err) {
         console.error('네이버 로그인 오류:', err.response?.data || err.message)
         alert('로그인 실패')
       }
     }
-
     fetchAccessToken()
   }, [])
 
-  return <div>네이버 로그인 처리 중...</div>
+  return <div>네이버 로그인 중...</div>
 }
 
 export default LoginCallback
