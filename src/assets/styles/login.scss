@@ -2,11 +2,25 @@
 
 .findLink{
   width: 100%;
-  padding: rem(15) rem(10);
+  padding: rem(10) 0 rem(60);
+  @include flexbox(row, center, center, 10);
+  font-size: rem(13);
   color: #303030;
-  a{
-    float: right;
-    font-weight: 500;
-    color: #be9c7a;
+}
+
+.snsLogin{
+  width: 100%;
+  padding: rem(20) 0;
+  @include flexbox(row, center, center, 15);
+  li{
+    button{
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      img{
+        width: rem(50);
+        height: rem(50);
+      }
+    }
   }
 }

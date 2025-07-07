@@ -71,7 +71,7 @@ footer{
 .contents{
   width: 100%;
   height: 100vh;
-  min-height: 300px;
+  min-height: 200px;
   padding: rem(18);
   .introTit{
     span{
@@ -99,6 +99,28 @@ input{
   outline: none;
   &:focus {
     outline: 1px solid #a17d57;
+  }
+}
+
+//etc
+.line{
+  width: 100%;
+  height: 1px;
+  background: #d0d0d0;
+  position: relative;
+  span{
+    display: block;
+    padding: 0 rem(5);
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #898989;
+    letter-spacing: rem(-1);
+    font-size: rem(12);
+    font-weight: lighter;
+
   }
 }
 
