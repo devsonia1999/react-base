@@ -1,7 +1,7 @@
-import '@/assets/styles/login.scss';
-import { getNaverLoginUrl } from '@/auth/naverLogin.js';
+import '@/assets/styles/login.scss'
+import { getNaverLoginUrl } from '@/auth/naverLogin.js'
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function Login() {
 
@@ -15,7 +15,7 @@ function Login() {
     <div className='contents'>
       <h2 className='introTit'>
         <span>북메이트</span>에서<br/>
-        인상깊은 책을 소개해주세요.<br/>
+        인상깊게 읽은 책을 소개해주세요.<br/>
         환영합니다.
       </h2>
       <input type='text' placeholder='아이디를 입력하세요' />
