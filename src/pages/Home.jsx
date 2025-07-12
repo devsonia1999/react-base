@@ -5,25 +5,25 @@ import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // api
-import { searchBook } from '@/services/naverService';
+import { searchBook } from '@/api/naver';
 // css
 import '@/assets/styles/home.scss';
 
 function Home() {
-  const [books, setBooks] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [books, setBooks] = useState([])
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const bookData = await searchBook("한강",7);
-        setBooks(bookData.data.items);
+        const bookData = await searchBook("한강",7)
+        setBooks(bookData.data.items)
       } catch (error) {
-        console.error('error:', error);
+        console.error('error:', error)
       }
-    };
-    fetchData();
-  }, []);
+    }
+    fetchData()
+  }, [])
 
   return (
     <>
