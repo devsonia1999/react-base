@@ -1,15 +1,33 @@
 import '@/assets/styles/login.scss';
+import { getKakaoLoginUrl } from '@/auth/KakaoLogin.js';
 import { getNaverLoginUrl } from '@/auth/naverLogin.js';
-import React from 'react';
+import { AuthContext } from '@/context/AuthContext';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+const Login = () => {
 
   // 네이버 로그인 페이지로 리다이렉트
-  const naverUrl = () => {
-    const url = getNaverLoginUrl();
-    window.location.href = url;
+  const naverLogin = () => {
+    console.log('naverLogin called')
+    const url = getNaverLoginUrl()
+    window.location.href = url
   }
+
+  // 카카오 로그인
+  const kakaoLogin = () => {
+    console.log('kakaoLogin called')
+    const url = getKakaoLoginUrl()
+    window.location.href = url
+  }
+
+  // 구글 로그인
+  const authLogic = useContext(AuthContext)
+  const googleLogin = () => {
+    console.log('googleLogin called')
+    authLogic.signInWithGoogle()
+  }
+
 
   return (
     <div className='contents'>
@@ -28,12 +46,12 @@ function Login() {
       </ul>
       <div className='line'><span>소셜계정으로 로그인</span></div>
       <ul className='snsLogin'>
-        <li><button className='' onClick={naverUrl}><img src='src/assets/images/naverBtn.png'/></button></li>
-        <li><button className='' onClick={naverUrl}><img src='src/assets/images/kakaoBtn.png'/></button></li>
-        <li><button className='' onClick={naverUrl}><img src='src/assets/images/googleBtn.png'/></button></li>
+        <li><button className='' onClick={naverLogin}><img src='src/assets/images/naverBtn.png'/></button></li>
+        <li><button className='' onClick={kakaoLogin}><img src='src/assets/images/kakaoBtn.png'/></button></li>
+        <li><button className='' onClick={googleLogin}><img src='src/assets/images/googleBtn.png'/></button></li>
       </ul>
     </div>
-  );
+  )
 }
 
 export default Login;
